@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Trello Widget</title>
+</head>
+<body class="pt-2 flex max-w-7xl mx-auto justify-center items-center px-10 pb-16 bg-black">
+    <form id="formularioTrello" autocomplete="off" class="text-black flex flex-col gap-4 bg-gray-400 p-4 rounded-lg text-md shadow-lg lg:w-2/4 md:w-4/5 w-full">
+        
+        <label for="nombreTablero" class="font-bold text-zinc-900">Nombre del tablero:</label>
+        <select name="nombreTablero" id="nombreTablero" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700 w-48">
+            <option value="" disabled Selected>Selecciona un tablero</option>
+            <option value="Fraude BB">Fraude BB</option>
+            <option value="Fraude TB">Fraude TB</option>
+        </select>
+
+        <label for="nombreTarjeta" class="font-bold text-zinc-900">Nombre de la tarjeta:</label>
+        <input type="text" id="nombreTarjeta" name="nombreTarjeta" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700">
+      
+        <label for="descripcionTarjeta" class="font-bold text-zinc-900">Descripción de la tarjeta:</label>
+
+        <input id="tipoCuenta" name="tipoCuenta" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700" value="Tipo de cuenta: "></input>
+        <input id="usuario" name="usuario" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700" value="Usuario: "></input>
+        <input id="celular" name="celular" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700" value="Celular: "></input>
+        <input id="correo" name="correo" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700" value="Correo: "></input>
+        <input id="fecha" name="fecha" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700" value="Fecha de contacto: "></input>
+        <input id="caso" name="caso" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700" value="Caso: "></input>
+        <input id="monto" name="monto" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700" value="Monto: "></input>
+        <textarea id="jerarquia" name="jerarquia" rows="4" class="rounded-lg p-2 bg-zinc-100 focus:outline-slate-700">Jerarquía: </textarea>
+
+      
+        <button id="btn" disabled
+        class="w-40 place-self-center bg-[#0559fa] py-2 px-4 rounded-lg font-bold text-white hover:bg-[#68afff] text-center transition ease-in-out disabled:opacity-50 disabled:cursor-not-allowed disabled:hover:bg-black">
+            Crear tarjeta
+        </button>
+    </form>
+    <script type="module" src="index.js"></script>
+</body>
+</html>
