@@ -61,7 +61,7 @@ inputTarjeta.addEventListener('input', e => {
 });
 
 inputTipoCuenta.addEventListener('input', e => {
-    if (inputTipoCuenta.value === 'Tipo de cuenta: ' && inputTipoCuenta.value === '') {
+    if (inputTipoCuenta.value === 'Tipo de cuenta: ' || inputTipoCuenta.value === '') {
         tipoCuentaValidation = false;
         validation(inputTipoCuenta, tipoCuentaValidation);
     } else {
