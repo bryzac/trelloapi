@@ -12,6 +12,7 @@ const inputFecha = document.querySelector('#fecha');
 const inputCaso = document.querySelector('#caso');
 const inputMonto = document.querySelector('#monto');
 const inputJerarquia = document.querySelector('#jerarquia');
+const inputImagenes = document.querySelector('#imagenes');
 
 // Validations
 let nombreTarjetaValidation = false;
@@ -154,7 +155,8 @@ form.addEventListener('submit', async e => {
         const caso = inputCaso.value;
         const monto = inputMonto.value;
         const jerarquia = inputJerarquia.value;
-        const descripcionTarjeta = `${tipoCuenta} %0d%0a ${usuario} ${celular} %0d%0a ${correo} %0d%0a ${fecha} %0d%0a ${caso} %0d%0a ${monto} %0d%0a ${jerarquia}`;
+        const imagenes = inputImagenes.value;
+        const descripcionTarjeta = `${tipoCuenta} %0d%0a ${usuario} ${celular} %0d%0a ${correo} %0d%0a ${fecha} %0d%0a ${caso} %0d%0a ${monto} %0d%0a ${jerarquia} %0d%0a ${imagenes}`;
 
         const { data } = await axios.post('/api/trello', {nombreTablero, nombreTarjeta, descripcionTarjeta});
 
