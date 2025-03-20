@@ -62,7 +62,7 @@ inputTarjeta.addEventListener('input', e => {
 });
 
 inputTipoCuenta.addEventListener('input', e => {
-    if (inputTipoCuenta.value === 'Tipo de cuenta: ' || inputTipoCuenta.value === '') {
+    if (inputTipoCuenta.value === '') {
         tipoCuentaValidation = false;
         validation(inputTipoCuenta, tipoCuentaValidation);
     } else {
@@ -72,7 +72,7 @@ inputTipoCuenta.addEventListener('input', e => {
 });
 
 inputUsuario.addEventListener('input', e => {
-    if (inputUsuario.value === 'Usuario: ' || inputUsuario.value === '') {
+    if (inputUsuario.value === '') {
         usuarioValidation = false;
         validation(inputUsuario, usuarioValidation);
     } else {
@@ -82,7 +82,7 @@ inputUsuario.addEventListener('input', e => {
 });
 
 inputCelular.addEventListener('input', e => {
-    if (inputCelular.value === 'Celular: ' || inputCelular.value === '') {
+    if (inputCelular.value === '') {
         celularValidation = false;
         validation(inputCelular, celularValidation);
     } else {
@@ -92,7 +92,7 @@ inputCelular.addEventListener('input', e => {
 });
 
 inputCorreo.addEventListener('input', e => {
-    if (inputCorreo.value === 'Correo: ' || inputCorreo.value === '') {
+    if (inputCorreo.value === '') {
         correoValidation = false;
         validation(inputCorreo, correoValidation);
     } else {
@@ -102,7 +102,7 @@ inputCorreo.addEventListener('input', e => {
 });
 
 inputFecha.addEventListener('input', e => {
-    if (inputFecha.value === 'Fecha de contacto: ' || inputFecha.value === '') {
+    if (inputFecha.value === '') {
         fechaValidation = false;
         validation(inputFecha, fechaValidation);
     } else {
@@ -112,7 +112,7 @@ inputFecha.addEventListener('input', e => {
 });
 
 inputCaso.addEventListener('input', e => {
-    if (inputCaso.value === 'Caso: ' || inputCaso.value === '') {
+    if (inputCaso.value === '') {
         casoValidation = false;
         validation(inputCaso, casoValidation);
     } else {
@@ -122,7 +122,7 @@ inputCaso.addEventListener('input', e => {
 });
 
 inputMonto.addEventListener('input', e => {
-    if (inputMonto.value === 'Monto: ' || inputMonto.value === '') {
+    if (inputMonto.value === '') {
         montoValidation = false;
         validation(inputMonto, montoValidation);
     } else {
@@ -132,7 +132,7 @@ inputMonto.addEventListener('input', e => {
 });
 
 inputJerarquia.addEventListener('input', e => {
-    if (inputJerarquia.value === 'Jerarquía: ' || inputJerarquia.value === '') {
+    if (inputJerarquia.value === '') {
         jerarquiaValidation = false;
         validation(inputJerarquia, jerarquiaValidation);
     } else {
@@ -156,21 +156,22 @@ form.addEventListener('submit', async e => {
         const monto = inputMonto.value;
         const jerarquia = inputJerarquia.value;
         const imagenes = inputImagenes.value;
-        const descripcionTarjeta = `${tipoCuenta} %0d%0a ${usuario} ${celular} %0d%0a ${correo} %0d%0a ${fecha} %0d%0a ${caso} %0d%0a ${monto} %0d%0a ${jerarquia} %0d%0a ${imagenes}`;
+        const descripcionTarjeta = `Tipo de cuenta: ${tipoCuenta} %0d%0a Usuario: ${usuario} %0d%0a Celular: ${celular} %0d%0a Correo: ${correo} %0d%0a Fecha de contacto: ${fecha} %0d%0a Caso: ${caso} %0d%0a Monto: ${monto} %0d%0a Jerarquía: ${jerarquia} %0d%0a Link de imágenes: ${imagenes}`;
 
         const { data } = await axios.post('/api/trello', {nombreTablero, nombreTarjeta, descripcionTarjeta});
 
         alert('¡Tarjeta creada con éxito!');
 
         inputTarjeta.value = '';
-        inputTipoCuenta.value = 'Tipo de cuenta: ';
-        inputUsuario.value = 'Usuario: ';
-        inputCelular.value = 'Celular: ';
-        inputCorreo.value = 'Correo: ';
-        inputFecha.value = 'Fecha de contacto: ';
-        inputCaso.value = 'Caso: ';
-        inputMonto.value = 'Monto: ';
-        inputJerarquia.value = 'Jerarquía: ';
+        inputTipoCuenta.value = '';
+        inputUsuario.value = '';
+        inputCelular.value = '';
+        inputCorreo.value = '';
+        inputFecha.value = '';
+        inputCaso.value = '';
+        inputMonto.value = '';
+        inputJerarquia.value = '';
+        inputImagenes.value = '';
         formBtn.disabled = true;
         
     } catch (error) {
